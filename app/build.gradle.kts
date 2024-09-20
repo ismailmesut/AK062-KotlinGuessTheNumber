@@ -7,6 +7,10 @@ android {
     namespace = "com.ismailmesutmujde.kotlinguessthenumber"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.ismailmesutmujde.kotlinguessthenumber"
         minSdk = 24
