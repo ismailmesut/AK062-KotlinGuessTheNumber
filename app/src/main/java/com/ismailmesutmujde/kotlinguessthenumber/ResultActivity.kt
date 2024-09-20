@@ -14,6 +14,15 @@ class ResultActivity : AppCompatActivity() {
         val view = bindingResult.root
         setContentView(view)
 
+        val result = intent.getBooleanExtra("result", false)
+        if (result) {
+            bindingResult.textViewResult.text = "YOU WIN"
+            bindingResult.imageViewResult.setImageResource(R.drawable.happy_image)
+        } else {
+            bindingResult.textViewResult.text = "YOU LOST"
+            bindingResult.imageViewResult.setImageResource(R.drawable.sad_image)
+        }
+
         bindingResult.buttonPlayAgain.setOnClickListener {
             val intent = Intent(this@ResultActivity, GuessActivity::class.java)
             finish()
